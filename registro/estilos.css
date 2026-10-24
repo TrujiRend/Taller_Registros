@@ -64,7 +64,8 @@ button:disabled {
 }
 
 input:user-invalid,
-select:user-invalid {
+select:user-invalid,
+[aria-invalid="true"] {
   border: 2px solid #c0392b;
 }
 
@@ -73,4 +74,35 @@ select:user-invalid {
   min-height: 1.2em;
   font-size: 0.85rem;
   margin: 0;
+}
+
+.telefonos-bloque {
+  margin-top: 0.75rem;
+}
+
+.telefonos-titulo {
+  font-weight: 600;
+}
+
+.fila-telefono {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+
+.fila-telefono label {
+  margin: 0;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.fila-telefono input {
+  flex: 1;
+}
+
+#agregar-telefono {
+  margin-top: 0.5rem;
+  background: #eee;
+  color: #222;
 }

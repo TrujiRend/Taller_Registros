@@ -55,9 +55,16 @@
     </label>
     <p id="terminos-error" class="error" aria-live="polite"></p>
 
+    <div class="telefonos-bloque">
+      <span class="telefonos-titulo">Teléfonos (opcional, hasta 3)</span>
+      <div id="telefonos"></div>
+      <p id="telefono-error" class="error" aria-live="polite"></p>
+      <button type="button" id="agregar-telefono">Agregar teléfono</button>
+    </div>
+
     <button type="submit">Crear cuenta</button>
     <p id="mensaje" role="status"></p>
   </form>
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
