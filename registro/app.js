@@ -6,6 +6,7 @@ import { validarCampo, validarFormulario } from './validaciones.js';
 const form = document.querySelector('#registro');
 const boton = form.querySelector('button[type="submit"]');
 const mensaje = document.querySelector('#mensaje');
+const saludo = document.querySelector('#saludo');
 
 function debounce(fn, ms) {
   let espera;
@@ -99,6 +100,7 @@ lista.addEventListener('focusout', (e) => {
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+  saludo.textContent = '';
 
   const datos = leerDatos();
   const errores = validarFormulario(datos);
@@ -128,6 +130,8 @@ form.addEventListener('submit', async (e) => {
 
     const creado = await res.json();
     mensaje.textContent = `¡Cuenta creada! Id: ${creado.id}`;
+    // Seguro: el texto se muestra tal cual, no se interpreta como HTML (nivel 5, parte B)
+    saludo.textContent = `Hola, ${datos.nombre}`;
     form.reset();
     lista.innerHTML = '';
   } catch (err) {
