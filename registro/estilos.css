@@ -62,3 +62,15 @@ button:disabled {
   min-height: 1.4em;
   text-align: center;
 }
+
+input:user-invalid,
+select:user-invalid {
+  border: 2px solid #c0392b;
+}
+
+.error {
+  color: #c0392b;
+  min-height: 1.2em;
+  font-size: 0.85rem;
+  margin: 0;
+}
