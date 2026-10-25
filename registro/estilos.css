@@ -76,6 +76,12 @@ select:user-invalid,
   margin: 0;
 }
 
+.hint {
+  color: #666;
+  font-size: 0.8rem;
+  margin: 0.15rem 0 0;
+}
+
 .telefonos-bloque {
   margin-top: 0.75rem;
 }

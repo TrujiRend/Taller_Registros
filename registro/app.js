@@ -38,6 +38,18 @@ form.addEventListener('focusout', (e) => {
   mostrarError(e.target.name, validarCampo(e.target.name, leerDatos()));
 });
 
+// Una vez que "confirmar" ya mostró un error, lo revalidamos en cada
+// tecla (no solo al salir del campo) para que el mensaje desaparezca
+// apenas la persona corrige, sin tener que volver a salir del campo.
+function revalidarConfirmarSiYaTeniaError() {
+  const confirmar = form.elements.confirmar;
+  if (confirmar.getAttribute('aria-invalid') === 'true') {
+    mostrarError('confirmar', validarCampo('confirmar', leerDatos()));
+  }
+}
+form.elements.confirmar.addEventListener('input', revalidarConfirmarSiYaTeniaError);
+form.elements.password.addEventListener('input', revalidarConfirmarSiYaTeniaError);
+
 // ---------- Nivel 4 · Parte B: correo asíncrono (¿ya existe?) ----------
 
 const registrados = ['ana@mail.com', 'admin@mail.com'];
